@@ -45,7 +45,7 @@ public class UserController {
 
         userService.save(userForm);
 
-        securityService.autoLogin(userForm.getUserName(), userForm.getPassword());
+        securityService.autoLogin(userForm.getUserName(), userForm.getPasswordConfirm());
 
         return "redirect:/welcome";
     }
@@ -65,4 +65,5 @@ public class UserController {
     public String welcome(Model model) {
         return "welcome";
     }
+
 }

@@ -8,7 +8,7 @@ import java.util.Set;
  * cristianramirezgt@gmail.com
  */
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
     private Long id;
