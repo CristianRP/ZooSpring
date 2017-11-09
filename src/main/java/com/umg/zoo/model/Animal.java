@@ -1,7 +1,7 @@
 package com.umg.zoo.model;
 
 import javax.persistence.*;
-import javax.websocket.ClientEndpoint;
+import java.util.Set;
 
 /**
  * Created by Cristian Ramírez on 8/11/2017.
@@ -30,6 +30,10 @@ public class Animal {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idSupervisor")
     private User supervisor;
+    @ManyToMany
+    @JoinTable(name = "animal_meal", joinColumns = @JoinColumn(name = "animal_id"),
+            inverseJoinColumns = @JoinColumn(name = "meal_id"))
+    private Set<Meal> meals;
 
     public Animal() {
     }
@@ -106,5 +110,13 @@ public class Animal {
 
     public void setSupervisor(User supervisor) {
         this.supervisor = supervisor;
+    }
+
+    public Set<Meal> getMeals() {
+        return meals;
+    }
+
+    public void setMeals(Set<Meal> meals) {
+        this.meals = meals;
     }
 }
