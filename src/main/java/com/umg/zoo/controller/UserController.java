@@ -47,7 +47,7 @@ public class UserController {
 
         securityService.autoLogin(userForm.getUserName(), userForm.getPasswordConfirm());
 
-        return "redirect:/welcome";
+        return "redirect:/animals";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)

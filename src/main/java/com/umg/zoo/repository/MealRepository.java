@@ -1,5 +1,6 @@
 package com.umg.zoo.repository;
 
+import com.umg.zoo.model.Meal;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -7,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * UMG
  * cristianramirezgt@gmail.com
  */
-public interface MealRepository extends JpaRepository<MealRepository, Long> {
+public interface MealRepository extends JpaRepository<Meal, Long> {
 }
